@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1= title
+  - var image_names=["crysler","elentra","honda2","hondacity","sonata"];
+  - for (let i = 0; i < 3; i++) {
+     - var img=Math.floor(Math.random()*5)
+     - var car=image_names[img]
+     img(src=`images/${car}.jpg`,alt=`${car}`,height=300,width=300)
+  - }
