@@ -1,4 +1,4 @@
-var express = require('express');
+ var express = require('express');
 var router = express.Router();
 // Require controller modules.
 var api_controller = require('../controllers/api');
@@ -17,4 +17,6 @@ router.put('/cars/:id', car_controller.car_update_put);
 router.get('/cars/:id', car_controller.car_detail);
 // GET request for list of all car items.
 router.get('/cars', car_controller.car_list);
+// GET request for one costume. 
+router.get('/cars/:id', car_controller.car_detail);
 module.exports = router;
