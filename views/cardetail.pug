@@ -1,0 +1,29 @@
+extends layout
+
+block content 
+  h1= title 
+
+  if(toShow == null)
+   h2 no instance to delete 
+  eles
+  - let carid = toShow._id 
+  - let Model  = toShow.Model 
+  - let yearofmanufacturing = toShow.yearofmanufacturing 
+  - let color = toShow.color 
+  div 
+    div.row 
+      div(class='carAttr mr-3') car ID is: 
+      div #{carid} 
+    div.row 
+      div(class='carAttr mr-3') car Model is: 
+      div #{Model} 
+    div.row 
+      div(class='carAttr mr-3') car  yearofmanufacturing  is: 
+      div #{yearofmanufacturing} 
+    div.row 
+      div(class='carAttr mr-3') car color is: 
+      div #{color} 
+
+      
+      
+      

@@ -6,3 +6,15 @@ body {
 a {
   color: #00B7FF;
 }
+.carAttr { 
+  background-color: aquamarine; 
+  color: rgb(1, 0, 0);
+  width: 120px;
+  border-style: solid; 
+} 
+
+.style {
+
+  background-color: rgb(116, 179, 206);
+  border-style: dotted;
+}

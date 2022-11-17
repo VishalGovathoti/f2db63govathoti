@@ -46,21 +46,6 @@ app.use('/car', appRouter);
 app.use('/gridbuild', gridbuildRouter);
 app.use('/selector', selectorRouter);
 app.use('/resource', resourceRouter);
-// Handle car delete on DELETE. 
-exports.car_delete = async function(req, res) { 
-  console.log("delete "  + req.params.id) 
-  try { 
-      result = await car.findByIdAndDelete( req.params.id) 
-      console.log("Removed " + result) 
-      res.send(result) 
-  } catch (err) { 
-      res.status(500) 
-      res.send(`{"error": Error deleting ${err}}`); 
-  } 
-}; 
-
-
-
 // We can seed the collection if needed on server start
 async function recreateDB(){
  // Delete everything
