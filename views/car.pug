@@ -8,7 +8,7 @@ block content
   div(class="container-fluid")
    div(class="row m-1" )
     each item in results
-     - let destination = `dispatch(\"/cars/update?id=${item._id}\")`
+     - let destination = `dispatch(\"/car/update?id=${item._id}\")`
      div(class="col-sm-2" onclick=`buy(${index})`) Model is #{item.Model} <br /> Year of Manufacturing is #{item.yearofmanufacturing} <br /> color is #{item.color}
      button.btn( class="btn-primary ml-1", onclick= destination) Update
 
