@@ -2,6 +2,7 @@ extends layout
 
 block content
   h1= title
+   button.btn(class="btn-primary btn-sm ml-1", style="margin: 5px; width: 120px;", onclick=`dispatch(\"/car/create\")`) Create
   - var results = results;
   //- var results=[{Model:"Hyndai Sonata", yearofmanufacturing : 2018,color:"Red"},{Model:"crysler ",yearofmanufacturing:2019,color:"Silver"},{Model:"Honda",yearofmanufacturing:2020,color:"Blue"},{Model:"Honda", yearofmanufacturing : 2020,color:"Blue"}];
   
@@ -11,7 +12,9 @@ block content
     each item in results
      - let destination = `dispatch(\"/car/update?id=${item._id}\")`
      div(class="col-sm-2" onclick=`buy(${index})`) Model is #{item.Model} <br /> Year of Manufacturing is #{item.yearofmanufacturing} <br /> color is #{item.color}
-     button.btn( class="btn-primary ml-1", onclick= destination) Update
+      button.btn(class="btn-success btn-sm ml-1", style="margin: 7px; width: 140px;", onclick=`dispatch(\"/car/detail?id=${item._id}\")`) View
+      button.btn(class="btn-warning btn-sm ml-1", style="margin: 7px; width: 140px;", onclick= `dispatch(\"/car/update?id=${item._id}\")`) Update
+          button.btn(class="btn-danger btn-sm ml-1", style="margin: 7px; width: 140px;", onclick= `dispatch(\"/car/delete?id=${item._id}\")`) Delete 
 
   script. 
     function dispatch(path){ 
